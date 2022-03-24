@@ -38,6 +38,7 @@ nav #logo img{
 #logo a{
     line-height: 60px;
     color: #ccc;
+    text-transform: uppercase;
 }
 
 nav ul{
@@ -54,5 +55,55 @@ nav  ul li {
 }
 
 nav  ul li a{
+    font-size: 12px;
     line-height: 60px;
+    text-transform: uppercase;
+}
+
+
+/* start component */
+
+#container{
+    padding-top: 20px;
+}
+
+#form-summoner{
+    padding-top: 50px;
+    text-align: center;
+    margin: 0px auto;
+
+}
+
+#start-logo img{
+    height: 200px;
+}
+
+#form-summoner #form{
+    display: flex;
+    flex-direction: row;
+
+    background-color: rgb(110, 0, 0);;
+    height: 30px;
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px  5px gray;
+}
+
+#form-summoner #form input[type="text"]{
+    width: 70%;
+    padding-left: 5px;
+}
+
+#form-summoner #form select{
+    width: 15%;
+}
+
+#form-summoner #form input[type="submit"]{
+    width: 15%;
+    background-color: transparent;
+    color: #ccc;
+    border: none;
 }

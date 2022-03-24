@@ -1,1 +1,18 @@
-<p>start works!</p>
+<div id="container">
+    <div id="form-summoner">
+        <div id="start-logo">
+            <img src="../../../assets/img/leona.png" alt="">
+        </div>
+        <div id="form">
+            <input type="text"  [(ngModel)]="summonername" placeholder="Enter your summoner name">
+            <select name="server" id="server" [(ngModel)]="server">
+                <option [ngValue]="servers[0]" selected>LAN</option>
+                <option [ngValue]="servers[1]">NA</option>
+                <option [ngValue]="servers[2]">LAS</option>
+                <option [ngValue]="servers[3]">EUW</option>
+            </select>
+            <input type="submit"  (click)="seeSummoner()" value="GO">
+        </div>
+    </div>
+
+</div>

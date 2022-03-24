@@ -1,8 +1,8 @@
 <nav>
   <div id="logo">
-    <img src="../assets/img/logo.png" alt="">
+    <img [routerLink]="['']" src="../assets/img/logo.png" alt="">
     <div id="title">
-      <a href="#">eagueApi</a>
+      <a [routerLink]="['']">eagueApi</a>
     </div>
   </div>
   <ul>
@@ -11,3 +11,4 @@
     <li><a>Live</a></li>
   </ul>
 </nav>
+<router-outlet></router-outlet>
