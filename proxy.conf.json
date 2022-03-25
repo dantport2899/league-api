@@ -1,0 +1,7 @@
+{
+    "/lol/*": {
+      "target": "https://la1.api.riotgames.com",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
