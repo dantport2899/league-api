@@ -28,4 +28,13 @@ export class SummonerService{
             'X-Riot-Token': this.key
         }});        
     }
+
+    getSummonerleague(encryptedsummonerid:string):Observable<any>{
+        return this._http.get('/lol/league/v4/entries/by-summoner/'+encryptedsummonerid,{headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Access-Control-Allow-Origin': '*',
+       'X-Riot-Token': this.key
+   }});        
+}
 }
