@@ -141,7 +141,7 @@ nav  ul li a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 220px;
     width: 100%;
     margin-top: 20px;
 }
@@ -165,3 +165,13 @@ nav  ul li a{
     font-size: 15px;
     text-transform: uppercase;
 }
+
+#wins{
+    color: green;
+}
+
+#losses{
+    color: red;
+}
+
+/* Champs Mastery */

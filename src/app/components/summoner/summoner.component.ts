@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';  //servicios p
 import { SummonerService } from 'src/app/services/summoner.service';
 import { Summoner } from 'src/app/models/summoner';
 import { Summonerleague } from 'src/app/models/summonerleague';
+import { Summonermastery } from 'src/app/models/summonermastery';
+import { Championmastery } from 'src/app/models/championmastery';
 import { Global } from 'src/app/services/global';
 
 
@@ -15,14 +17,12 @@ import { Global } from 'src/app/services/global';
 export class SummonerComponent implements OnInit {
   public summoner!: Summoner;
   public summonerleagues: Summonerleague[]=[];
+  public summonermastery!: Summonermastery;
+  public championmastery: Championmastery[]=[];
 
   public summonername:string = "";
   public servercode:string="";
   public encryptedsummonerid:string="";
-  public winrate:number=0;
-  public winrate2:number=0;
-  public sololeague:string="";
-  public flexleague:string="";
 
   constructor(
     private _summonerservice: SummonerService,
@@ -52,6 +52,8 @@ export class SummonerComponent implements OnInit {
           console.log(this.encryptedsummonerid);
 
           this.getSummonerleague(this.encryptedsummonerid);
+          this.getSummonerMastery(this.encryptedsummonerid);
+          this.getChampionMastery(this.encryptedsummonerid);
 
        },
        error =>{
@@ -64,14 +66,6 @@ export class SummonerComponent implements OnInit {
     this._summonerservice.getSummonerleague(encryptedsummonerid).subscribe(
       response =>{
          this.summonerleagues = response;
-         console.log(this.summonerleagues);
-        this.winrate=(this.summonerleagues[0].wins*100)/(this.summonerleagues[0].wins+this.summonerleagues[0].losses);
-        this.winrate = Number(this.winrate);
-
-        this.winrate2=(this.summonerleagues[1].wins*100)/(this.summonerleagues[1].wins+this.summonerleagues[1].losses);
-        this.winrate2 = Number(this.winrate2);
-
-        this.geticonleague(this.summonerleagues[0].tier,this.summonerleagues[1].tier);
       },
       error =>{
        console.log(<any>error);
@@ -79,90 +73,27 @@ export class SummonerComponent implements OnInit {
    );
   }
 
-  geticonleague(solo:String,flex:string){
-    switch (solo) {
-      case "IRON":
-        this.sololeague = "Iron";
-        break;
-        
-        case "BRONZE":
-        this.sololeague = "Bronze";
-        break;
+  getSummonerMastery(encryptedsummonerid:string){
+    this._summonerservice.getSummonerMastery(encryptedsummonerid).subscribe(
+      response =>{
+         this.summonermastery = response;
+      },
+      error =>{
+       console.log(<any>error);
+      }
+   );
+  }
 
-        case "SILVER":
-        this.sololeague = "Silver";
-        break;
-
-        case "GOLD":
-        this.sololeague = "Gold";
-        break;
-
-        case "PLATINUM":
-        this.sololeague = "Platinum";
-        break;
-
-        case "DIAMOND":
-        this.sololeague = "Diamond";
-        break;
-
-        case "MASTER":
-        this.sololeague = "Master";
-        break;
-
-        case "GRANDMASTER":
-        this.sololeague = "Grandmaster";
-        break;
-
-        case "CHALLENGER":
-        this.sololeague = "Challenger";
-        break;
-    
-      default:
-        this.flexleague = "Unranked";
-        break;
-    }
-
-    switch (flex) {
-      case "IRON":
-        this.flexleague = "Iron";
-        break;
-        
-        case "BRONZE":
-        this.flexleague = "Bronze";
-        break;
-
-        case "SILVER":
-        this.flexleague = "Silver";
-        break;
-
-        case "GOLD":
-        this.flexleague = "Gold";
-        break;
-
-        case "PLATINUM":
-        this.flexleague = "Platinum";
-        break;
-
-        case "DIAMOND":
-        this.flexleague = "Diamond";
-        break;
-
-        case "MASTER":
-        this.flexleague = "Master";
-        break;
-
-        case "GRANDMASTER":
-        this.flexleague = "Grandmaster";
-        break;
-
-        case "CHALLENGER":
-        this.flexleague = "Challenger";
-        break;
-    
-      default:
-        this.flexleague = "none";
-        break;
-    }
+  getChampionMastery(encryptedsummonerid:string){
+    this._summonerservice.getChampionMastery(encryptedsummonerid).subscribe(
+      response =>{
+         this.championmastery = response;
+         console.log(this.championmastery)
+      },
+      error =>{
+       console.log(<any>error);
+      }
+   );
   }
 
 }

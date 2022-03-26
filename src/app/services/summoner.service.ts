@@ -35,6 +35,24 @@ export class SummonerService{
        'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
        'Access-Control-Allow-Origin': '*',
        'X-Riot-Token': this.key
-   }});        
-}
+        }});        
+    }
+
+    getSummonerMastery(encryptedsummonerid:string):Observable<any>{
+        return this._http.get('/lol/champion-mastery/v4/scores/by-summoner/'+encryptedsummonerid,{headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Access-Control-Allow-Origin': '*',
+       'X-Riot-Token': this.key
+        }});        
+    }
+
+    getChampionMastery(encryptedsummonerid:string):Observable<any>{
+        return this._http.get('/lol/champion-mastery/v4/champion-masteries/by-summoner/'+encryptedsummonerid,{headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Access-Control-Allow-Origin': '*',
+       'X-Riot-Token': this.key
+        }});        
+    }
 }

@@ -8,28 +8,31 @@
             <h3>Level {{summoner.summonerLevel}}</h3> 
         </div>
         <div id="summoner-league">
-            <div id="solo" class="league" *ngIf="summonerleagues[0]">
-                <div id="league-logo">
-                    <h3>Ranked Solo</h3>
-                    <img  src="../../../assets/img/ranked-emblems/Emblem_{{sololeague}}.png" alt="">
+            <div class="league" *ngFor="let league of summonerleagues">
+                <div id="league-logo" >
+                    <h3 *ngIf="league.queueType=='RANKED_SOLO_5x5'">Ranked Solo</h3>
+                    <h3 *ngIf="league.queueType=='RANKED_FLEX_SR'">Ranked Flex</h3>
+                    <img  src="../../../assets/img/ranked-emblems/Emblem_{{league.tier}}.png" alt="">
                 </div>
                 <div id="league-info">
-                    <h4>{{summonerleagues[0].tier}} {{summonerleagues[0].rank}}</h4>
-                    <p>PL {{summonerleagues[0].leaguePoints}} /  V{{summonerleagues[0].wins}} D{{summonerleagues[0].losses}}</p>
-                    <p>WinRate {{winrate | number:'1.2-2'}}%</p>
-                </div>
-            </div>
-            <div id="flex" class="league" *ngIf="summonerleagues[1]">
-                <div id="league-logo">
-                    <h3>Ranked Flex</h3>
-                    <img  src="../../../assets/img/ranked-emblems/Emblem_{{flexleague}}.png" alt="">
-                </div>
-                <div id="league-info">
-                    <h4>{{summonerleagues[1].tier}} {{summonerleagues[1].rank}}</h4>
-                    <p>PL {{summonerleagues[1].leaguePoints}} /  V{{summonerleagues[1].wins}} D{{summonerleagues[1].losses}}</p>
-                    <p>WinRate {{winrate2 | number:'1.2-2'}}%</p>
+                    <h4>{{league.tier}} {{league.rank}}</h4>
+                    <p>PL {{league.leaguePoints}} /  <span id="wins">V{{league.wins}}</span> <span id="losses"> D{{league.losses}}</span></p>
+                    <p>WinRate {{(league.wins*100)/(league.wins+league.losses) | number:'1.2-2'}}%</p>
                 </div>
             </div>
         </div>
+        <div id="summoner-mastery">
+            <header>
+                <h3>Mastery points {{summonermastery}}</h3>
+            </header>
+            <div id="mains">
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </div>
