@@ -1,6 +1,11 @@
 {
-    "/lol/*": {
+    "/lol/": {
       "target": "https://la1.api.riotgames.com",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/cdn/": {
+      "target": "http://ddragon.leagueoflegends.com",
       "secure": false,
       "changeOrigin": true
     }

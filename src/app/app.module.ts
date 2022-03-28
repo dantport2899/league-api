@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { StartComponent } from './components/start/start.component';
 import { SummonerComponent } from './components/summoner/summoner.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ChampionsComponent } from './components/champions/champions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     SummonerComponent,
-    ErrorComponent
+    ErrorComponent,
+    ChampionsComponent
   ],
   imports: [
     BrowserModule,

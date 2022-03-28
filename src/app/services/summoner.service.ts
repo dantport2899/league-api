@@ -55,4 +55,8 @@ export class SummonerService{
        'X-Riot-Token': this.key
         }});        
     }
+
+    getAllchampions(){
+        return this._http.get('/cdn/12.5.1/data/en_US/champion.json',{headers: { 'Content-Type': 'application/json' }});   
+    }
 }
