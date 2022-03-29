@@ -14,7 +14,8 @@ export class ChampionsComponent implements OnInit {
   public champions:any = {};
 
   constructor(
-    private _summonerservice: SummonerService
+    private _summonerservice: SummonerService,
+    private _router:Router
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +28,12 @@ export class ChampionsComponent implements OnInit {
         //  this.summonerleagues = response;
         this.champions  = response;
         this.champions = this.champions.data;
-        this.championsarray = this.champions;
+        
+        for(let key in this.champions){  
+          if(this.champions.hasOwnProperty(key)){  
+            this.championsarray.push(this.champions[key]);  
+          }  
+         }  
 
         console.log(this.championsarray);
       },
@@ -37,4 +43,7 @@ export class ChampionsComponent implements OnInit {
    );
   }
 
+  seeChamp(champ:string){
+    this._router.navigate(['/champions/champion/'+champ]);
+  }
 }

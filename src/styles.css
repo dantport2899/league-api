@@ -58,6 +58,8 @@ nav  ul li a{
     font-size: 12px;
     line-height: 60px;
     text-transform: uppercase;
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -175,3 +177,51 @@ nav  ul li a{
 }
 
 /* Champs Mastery */
+
+
+/* Champ list */
+#champion-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; 
+
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+#champion-list .champion img{
+    height: 80px;
+}
+
+#champion-list .champion .tags{
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+
+    height: 80px;
+    width: 70px;
+    margin-left: 7px;
+
+}
+
+
+#champion-list .champion .tags p{
+    color: #ccc;
+    background-color: rgba(1, 11, 17, 0.7);
+    font-size: 12px;
+    line-height: 15px;
+
+    border-radius: 5px;
+
+}
+
+#champion-list .champion h4{
+    max-width: 100px;
+    text-align: center;
+    margin: 0px auto;
+    padding-bottom: 10px;
+}

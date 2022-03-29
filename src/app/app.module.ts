@@ -11,6 +11,7 @@ import { StartComponent } from './components/start/start.component';
 import { SummonerComponent } from './components/summoner/summoner.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ChampionsComponent } from './components/champions/champions.component';
+import { ChampioninfoComponent } from './components/championinfo/championinfo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChampionsComponent } from './components/champions/champions.component';
     StartComponent,
     SummonerComponent,
     ErrorComponent,
-    ChampionsComponent
+    ChampionsComponent,
+    ChampioninfoComponent
   ],
   imports: [
     BrowserModule,

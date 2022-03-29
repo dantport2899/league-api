@@ -1,8 +1,12 @@
 <div id="container">
     <div id="champion-list">
-        <div id="champion" *ngFor="let champion of championsarray">
-            <img src="" alt="">
-            <h4>{{champion.id}}</h4>
+        <div class="champion" *ngFor="let champion of championsarray">
+            <div class="tags">
+                <p *ngFor="let rol of champion.tags">{{rol}}</p>
+            </div>
+            
+            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/{{champion.id}}.png" alt="">
+            <h4 (click)="seeChamp(champion.id)">{{champion.name}}</h4>
         </div>
     </div>
 </div>
