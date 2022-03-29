@@ -1,2 +1,25 @@
-<p>championinfo works!</p>
-{{championname}}
+<div id="container">
+    <div id="champ-header">
+        <div id="champ-roles">
+            <h3 class="champ-rol" *ngFor="let rol of champinfo.tags">{{rol}}</h3>
+        </div>
+        <div id="champ-card">
+            <div id="icon">
+                <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/{{championname}}.png" alt="">
+            </div>
+            <div id="champ-info">
+                <h1>{{championname}}</h1>
+                <h3>Dificult: <span>{{champinfo.info.difficulty}}/10</span></h3>
+
+                <div id="champ-skills">
+                    <ul>
+                        <li *ngFor="let spell of champinfo.spells">
+                            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/spell/{{spell.id}}.png" alt="">
+                            <p>{{spell.name}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

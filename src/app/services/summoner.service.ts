@@ -59,4 +59,8 @@ export class SummonerService{
     getAllchampions(){
         return this._http.get('/cdn/12.5.1/data/en_US/champion.json',{headers: { 'Content-Type': 'application/json' }});   
     }
+
+    getChampinfo(champname:string){
+        return this._http.get('/cdn/12.6.1/data/en_US/champion/'+champname+".json",{headers: { 'Content-Type': 'application/json' }});   
+    }
 }
