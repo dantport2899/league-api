@@ -9,17 +9,26 @@
             </div>
             <div id="champ-info">
                 <h1>{{championname}}</h1>
-                <h3>Dificult: <span>{{champinfo.info.difficulty}}/10</span></h3>
-
-                <div id="champ-skills">
-                    <ul>
-                        <li *ngFor="let spell of champinfo.spells">
-                            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/spell/{{spell.id}}.png" alt="">
-                            <p>{{spell.name}}</p>
-                        </li>
-                    </ul>
-                </div>
+                <h3>Dificult: <span 
+                    [ngClass]="{
+                        easy: champinfo.info.difficulty > 1,
+                        medium: champinfo.info.difficulty > 4,
+                        hard: champinfo.info.difficulty > 6
+                      }" 
+                    >{{champinfo.info.difficulty}}/10</span></h3>
+                <p>{{champinfo.title}}</p>
             </div>
         </div>
+
+        <div id="details-card">
+            <div id="details-nav">
+                <ul>
+                    <li class="active">Spells</li>
+                    <li>Skins</li>
+                    <li>Biography</li>
+                </ul>
+            </div>
+            <spells [championspells]="champinfo.spells"></spells>
+        </div>        
     </div>
 </div>

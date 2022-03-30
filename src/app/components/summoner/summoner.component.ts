@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core'; //importar view child para leer los componentes
 import { Router, ActivatedRoute, Params } from '@angular/router';  //servicios para rutas con parametros
 import { SummonerService } from 'src/app/services/summoner.service';
 import { Summoner } from 'src/app/models/summoner';
@@ -20,9 +20,11 @@ export class SummonerComponent implements OnInit {
   public summonermastery!: Summonermastery;
   public championmastery: Championmastery[]=[];
 
-  public summonername:string = "";
+  public summonername:string = "Summoner";
   public servercode:string="";
   public encryptedsummonerid:string="";
+
+  @Output() summonerEmit = new EventEmitter();
 
   constructor(
     private _summonerservice: SummonerService,
@@ -36,7 +38,7 @@ export class SummonerComponent implements OnInit {
       this.servercode = params['server']; //colocar el mas para convertir a tipo numero
 
       this.getSummoner(this.summonername);
-
+      this.summonerEmit.emit(this.summonername);
 
       if(this.summonername == null){
         this._router.navigate(['/start']);

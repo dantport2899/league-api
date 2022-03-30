@@ -194,6 +194,7 @@ nav  ul li a{
 
 #champion-list .champion img{
     height: 80px;
+    box-shadow: 1px 1px  5px gray;
 }
 
 #champion-list .champion .tags{
@@ -225,3 +226,96 @@ nav  ul li a{
     margin: 0px auto;
     padding-bottom: 10px;
 }
+
+/* Champ info */
+#champ-header{
+    width: 90%;
+    margin: 0px auto;
+}
+
+#champ-header #champ-roles{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-bottom: 15px;
+}
+
+#champ-header #champ-roles .champ-rol{
+    background-color: rgb(110, 0, 0);
+    color: #ccc;
+    margin-right: 10px;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+#champ-header #champ-card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+#champ-header #champ-card #icon img{
+    box-shadow: 1px 1px  5px gray;
+}
+
+#champ-header #champ-card #champ-info{
+    margin-left: 15px;
+    width: 63%;
+}
+
+#champ-header #champ-card #champ-info h1{
+    color: rgb(110, 0, 0);
+}
+
+#champ-header #champ-card #champ-info .easy{
+    color: green;
+}
+
+#champ-header #champ-card #champ-info .medium{
+    color: yellow;
+}
+
+#champ-header #champ-card #champ-info .hard{
+    color: red;
+}
+
+/* details nav */
+#details-card{
+    margin-top: 20px;
+}
+
+#details-nav{
+    border-bottom: 1px solid rgb(110, 0, 0);
+    padding-bottom: 6px;
+}
+
+#details-nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 80%;
+    margin: 0px auto;
+    list-style: none;
+}
+
+#details-nav ul .active{
+    color: rgb(110, 0, 0);
+    font-weight: 600;   
+}
+
+/* spells  */
+
+#champ-spells ul{
+    margin-top: 20px;
+}
+
+#champ-spells ul{
+    list-style: none;
+}
+

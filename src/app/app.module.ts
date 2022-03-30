@@ -12,6 +12,9 @@ import { SummonerComponent } from './components/summoner/summoner.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ChampionsComponent } from './components/champions/champions.component';
 import { ChampioninfoComponent } from './components/championinfo/championinfo.component';
+import { SpellsComponent } from './components/championinfo/components/spells/spells.component';
+import { BiographyComponent } from './components/championinfo/components/biography/biography.component';
+import { SkinsComponent } from './components/championinfo/components/skins/skins.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ChampioninfoComponent } from './components/championinfo/championinfo.co
     SummonerComponent,
     ErrorComponent,
     ChampionsComponent,
-    ChampioninfoComponent
+    ChampioninfoComponent,
+    SpellsComponent,
+    BiographyComponent,
+    SkinsComponent
   ],
   imports: [
     BrowserModule,

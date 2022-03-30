@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';  //servicios para rutas con parametros
 
 
@@ -19,10 +19,13 @@ export class StartComponent implements OnInit {
   constructor( private _router:Router) { }
 
   ngOnInit(): void {
+    
   }
 
   seeSummoner(){
     this._router.navigate(['/summoner/'+this.server+'/'+this.summonername]);
   }
+
+ 
 
 }
