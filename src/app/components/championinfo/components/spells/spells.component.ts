@@ -7,6 +7,8 @@ import { Component, OnInit , Input, Output} from '@angular/core';
 })
 export class SpellsComponent implements OnInit {
   @Input() championspells!: any;
+  @Input() championpasive!: any;
+  @Input() championname!: any;
 
   constructor() { }
 

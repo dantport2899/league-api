@@ -1,8 +1,24 @@
 <div id="champ-spells">
+    <div id="champion-pssive">
+        <div id="spell-logo">
+            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/passive/{{championpasive.image.sprite}}" alt="">
+        </div>
+        <div id="spell-info">
+            <h3>{{championpasive.name}}</h3>
+            <p>{{championpasive.description}}</p>
+        </div>
+    </div>
     <ul>
         <li *ngFor="let spell of championspells">
-            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/spell/{{spell.id}}.png" alt="">
-            <p>{{spell.name}}</p>
+            <div id="spell-logo">
+                <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/spell/{{spell.id}}.png" alt="">
+            </div>
+            <div id="spell-info">
+                <h3>{{spell.name}}</h3>
+                <p>{{spell.description}}</p>
+                <h5>{{spell.cooldownBurn}} s</h5>
+                <h5>{{spell.costBurn}}</h5>
+            </div>
         </li>
     </ul>
 </div>
