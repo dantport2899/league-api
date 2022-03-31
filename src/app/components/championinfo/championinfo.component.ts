@@ -11,6 +11,7 @@ import { SummonerService } from 'src/app/services/summoner.service';
 export class ChampioninfoComponent implements OnInit {
   public championname:string = "";
   public champinfo:any = {};  
+  public infowindow:number=1;
 
   constructor(
     private _route: ActivatedRoute,
@@ -45,4 +46,13 @@ export class ChampioninfoComponent implements OnInit {
    ); 
   }
 
+  pagechange1(){
+    this.infowindow = 1;
+  }
+  pagechange2(){
+    this.infowindow = 2;
+  }
+  pagechange3(){
+    this.infowindow = 3;
+  }
 }

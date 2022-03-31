@@ -1,1 +1,17 @@
-<p>biography works!</p>
+<div id="champ-biography">
+    <div id="champ-lore">
+        <p>{{championinfo.lore}}</p>
+    </div>
+    <div id="ally-tips" *ngIf="championinfo.allytips">
+        <h5>Ally tips</h5>
+        <ul>
+            <li *ngFor="let allytip of championinfo.allytips">{{allytip}}</li>
+        </ul>
+    </div>
+    <div id="enemy-tips" *ngIf="championinfo.enemytips">
+        <h5>Enemy tips</h5>
+        <ul>
+            <li *ngFor="let enemytip of championinfo.enemytips">{{enemytip}}</li>
+        </ul>
+    </div>
+</div>

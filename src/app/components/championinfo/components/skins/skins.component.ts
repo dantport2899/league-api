@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-skins',
+  selector: 'skins',
   templateUrl: './skins.component.html',
   styleUrls: ['./skins.component.css']
 })
 export class SkinsComponent implements OnInit {
-
+  @Input() championname!: string;
+  @Input() championskins!: any;
   constructor() { }
 
   ngOnInit(): void {

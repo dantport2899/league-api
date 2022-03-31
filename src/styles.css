@@ -217,7 +217,6 @@ nav  ul li a{
     line-height: 15px;
 
     border-radius: 5px;
-
 }
 
 #champion-list .champion h4{
@@ -304,12 +303,29 @@ nav  ul li a{
     list-style: none;
 }
 
+#details-nav ul li button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
 #details-nav ul .active{
     color: rgb(110, 0, 0);
     font-weight: 600;   
 }
 
+.dont-show-info{
+    display: none;
+}
+
+.show-info{
+    display: block;
+}
+
 /* spells  */
+#champ-spells{
+    margin-top: 25px;
+}
 
 #champ-spells ul{
     margin-top: 20px;
@@ -317,5 +333,46 @@ nav  ul li a{
 
 #champ-spells ul{
     list-style: none;
+}
+
+#champ-spells .spell-box{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#champ-spells #champion-passive{
+    border-bottom: 1px solid rgb(110, 0, 0);
+    padding-bottom: 20px;
+}
+
+#champ-spells .spell-box .spell-logo{
+    padding-top: 5px;
+}
+
+#champ-spells .spell-box .spell-logo img{
+    box-shadow: 1px 1px  5px gray;
+}
+
+#champ-spells .spell-box .spell-info{
+    margin-left: 20px;
+}
+
+#champ-spells .spell-box .spell-info p{
+    margin-bottom: 5px;
+}
+
+#champ-spells .spell-box .spell-info h5{
+    margin-bottom: 5px;
+}
+
+#champ-spells .spell-button{
+    position: absolute;
+    margin-left: 4px;
+    margin-top: 4px;
+    background-color: rgba(1, 11, 17, 0.8);
+    color: #ccc;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 

@@ -9,6 +9,7 @@ export class SpellsComponent implements OnInit {
   @Input() championspells!: any;
   @Input() championpasive!: any;
   @Input() championname!: any;
+  @Input() championcost!: any;
 
   constructor() { }
 

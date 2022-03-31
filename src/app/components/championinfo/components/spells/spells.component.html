@@ -1,23 +1,27 @@
 <div id="champ-spells">
-    <div id="champion-pssive">
-        <div id="spell-logo">
-            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/passive/{{championpasive.image.sprite}}" alt="">
+    <div id="champion-passive" class="spell-box">
+        <div class="spell-logo">
+            <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/passive/{{championpasive.image.full}}" alt="">
         </div>
-        <div id="spell-info">
+        <div class="spell-info">
             <h3>{{championpasive.name}}</h3>
             <p>{{championpasive.description}}</p>
         </div>
     </div>
     <ul>
-        <li *ngFor="let spell of championspells">
-            <div id="spell-logo">
+        <li *ngFor="let spell of championspells; let i = index" class="spell-box">
+            <div class="spell-logo">
+                <p class="spell-button" *ngIf="i==0">Q</p>
+                <p class="spell-button" *ngIf="i==1">W</p>
+                <p class="spell-button" *ngIf="i==2">E</p>
+                <p class="spell-button" *ngIf="i==3">R</p>
                 <img src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/spell/{{spell.id}}.png" alt="">
             </div>
-            <div id="spell-info">
+            <div class="spell-info">
                 <h3>{{spell.name}}</h3>
                 <p>{{spell.description}}</p>
-                <h5>{{spell.cooldownBurn}} s</h5>
-                <h5>{{spell.costBurn}}</h5>
+                <h5>Cooldown: {{spell.cooldownBurn}} s</h5>
+                <h5 >Cost: <span *ngIf="championcost!='None'">{{spell.costBurn}}</span> {{championcost}}</h5>
             </div>
         </li>
     </ul>
