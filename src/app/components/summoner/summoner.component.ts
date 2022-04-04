@@ -5,6 +5,8 @@ import { Summoner } from 'src/app/models/summoner';
 import { Summonerleague } from 'src/app/models/summonerleague';
 import { Summonermastery } from 'src/app/models/summonermastery';
 import { Championmastery } from 'src/app/models/championmastery';
+import { Champion } from 'src/app/models/champion';
+
 import { Global } from 'src/app/services/global';
 
 
@@ -19,6 +21,9 @@ export class SummonerComponent implements OnInit {
   public summonerleagues: Summonerleague[]=[];
   public summonermastery!: Summonermastery;
   public championmastery: Championmastery[]=[];
+
+  public championsarray: Champion[]=[];
+  public champions:any = {};
 
   public summonername:string = "Summoner";
   public servercode:string="";
@@ -39,6 +44,7 @@ export class SummonerComponent implements OnInit {
 
       this.getSummoner(this.summonername);
       this.summonerEmit.emit(this.summonername);
+      this.getallchampions()
 
       if(this.summonername == null){
         this._router.navigate(['/start']);
@@ -51,7 +57,6 @@ export class SummonerComponent implements OnInit {
        response =>{
           this.summoner = response;
           this.encryptedsummonerid = this.summoner.id;
-          console.log(this.encryptedsummonerid);
 
           this.getSummonerleague(this.encryptedsummonerid);
           this.getSummonerMastery(this.encryptedsummonerid);
@@ -90,12 +95,36 @@ export class SummonerComponent implements OnInit {
     this._summonerservice.getChampionMastery(encryptedsummonerid).subscribe(
       response =>{
          this.championmastery = response;
-         console.log(this.championmastery)
       },
       error =>{
        console.log(<any>error);
       }
    );
   }
+
+  getallchampions(){
+    this._summonerservice.getAllchampions().subscribe(
+      response =>{
+        //  this.summonerleagues = response;
+        this.champions  = response;
+        this.champions = this.champions.data;
+        
+        for(let key in this.champions){  
+          if(this.champions.hasOwnProperty(key)){  
+            this.championsarray.push(this.champions[key]);  
+          }  
+         }
+         
+        console.log(this.championsarray);
+      },
+      error =>{
+       console.log(<any>error);
+      }
+   );
+  }  
+
+  // getchampinfo(keyid:number)  getchampinfo(keyid:number){
+  //   return this.championmastery.find(key => keyid == keyid )
+  // }
 
 }

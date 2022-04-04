@@ -6,9 +6,12 @@
     </div>
   </div>
   <ul>
-    <li><a>Player</a></li>
+    <li><a>{{Summoner}}</a></li>
     <li><a [routerLink]="['/champions']">Champion List</a></li>
     <li><a>Live</a></li>
   </ul>
 </nav>
-<router-outlet (summonerEmit)="getSummoner($event)"></router-outlet>
+<router-outlet ></router-outlet>
+<footer>
+  <p>Dante Portales Web Dev &copy;</p>
+</footer>

@@ -27,8 +27,8 @@
             </header>
             <div id="mains">
                 <ul>
-                    <li>
-                        
+                    <li *ngFor="let champion of championmastery">
+                        {{champion.championId}}
                     </li>
                 </ul>
             </div>

@@ -1,3 +1,36 @@
 <div id="champ-skins">
-    
+
+  <div id="skin-list">
+    <div class="skin-content" *ngFor="let skin of championskins; let i = index">
+      <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{championname}}_{{i}}.jpg" alt="">
+      <h3>{{skin.name}}</h3>
+    </div>
+  </div>
+
+  
+
+
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> -->
+        <!-- <div class="carousel-inner"> -->
+          <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+          <!-- <div class="carousel-item" *ngFor="let result of data; let i = index" [ngClass]="{'active': i === 1}"> -->
+           <!--  <img src={{result.img}} title={{result.title}} /> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"> -->
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <!-- <span class="visually-hidden">Previous</span> -->
+        <!-- </button> -->
+        <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> -->
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <!-- <span class="visually-hidden">Next</span> -->
+        <!-- </button> -->
+      <!-- </div> -->
+
+       <!-- <div class="bxslider">
+        <div><img src="https://battler.gg/wp-content/uploads/2021/04/comprar-pc-gamer-2021-battler.jpg"></div>
+        <div><img src="https://www.destreaming.es/wp-content/uploads/2020/11/pc_para_streaming_gaming.jpg"></div>
+        <div><img src="https://www.quonty.com/blog/wp-content/uploads/2020/02/tienda-online-de-informatica-y-tecnologia-14.jpg"></div>
+    </div> -->
+
 </div>

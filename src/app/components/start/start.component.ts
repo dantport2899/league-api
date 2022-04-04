@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';  //servicios para rutas con parametros
+import { AppModule } from 'src/app/app.module';
 
 
 @Component({
@@ -23,6 +24,9 @@ export class StartComponent implements OnInit {
   }
 
   seeSummoner(){
+    localStorage.setItem('currentsummoner', this.summonername);
+    localStorage.setItem('currentserver', this.server);
+
     this._router.navigate(['/summoner/'+this.server+'/'+this.summonername]);
   }
 
