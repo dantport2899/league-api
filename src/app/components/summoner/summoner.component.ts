@@ -115,7 +115,20 @@ export class SummonerComponent implements OnInit {
           }  
          }
          
-        console.log(this.championsarray);
+        //order by id
+        this.championsarray = this.championsarray.sort(function (n1, n2) {
+            if (n1.key > n2.key) {
+              return 1;
+            }
+
+            if (n1.key < n2.key) {
+              return -1;
+            }
+
+            return 0;
+          });
+
+        console.log(typeof(this.championsarray[1].key));
       },
       error =>{
        console.log(<any>error);
@@ -123,8 +136,7 @@ export class SummonerComponent implements OnInit {
    );
   }  
 
-  // getchampinfo(keyid:number)  getchampinfo(keyid:number){
-  //   return this.championmastery.find(key => keyid == keyid )
-  // }
+ 
+
 
 }
