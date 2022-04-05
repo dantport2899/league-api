@@ -53,7 +53,7 @@ nav ul{
 }
 
 nav  ul li {
-    padding-right: 25px;
+    padding-right: 22px;
 }
 
 nav  ul li a{
@@ -180,6 +180,52 @@ nav  ul li a{
 }
 
 /* Champs Mastery */
+
+#summoner-mastery #mains ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    list-style: none;
+}
+
+#summoner-mastery #mains ul li{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#summoner-mastery #mains ul li .mastery{
+    position: absolute;
+    width: 30px;
+}
+
+#summoner-mastery #mains ul li .chest{
+    position: absolute;
+    width: 20px;
+    padding-top: 60px;
+    left: 80px;
+}
+
+#summoner-mastery #mains ul li h3{
+    position: absolute;
+    color: white;
+    background-color: rgb(110, 0, 0);
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 100%;
+    margin-left: 4px;
+}
+
+#summoner-mastery #mains ul li .champ{
+    width: 80px;
+    box-shadow: 1px 1px  5px gray;
+}
+
+#summoner-mastery #mains ul li p{
+    font-size: 10px;
+}
+
 
 
 /* Champ list */

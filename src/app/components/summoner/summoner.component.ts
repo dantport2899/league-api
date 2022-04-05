@@ -134,7 +134,12 @@ export class SummonerComponent implements OnInit {
        console.log(<any>error);
       }
    );
-  }  
+  }
+  
+  getChampinfo(id:string){
+    var key = this.championsarray.find(x => x.key == id);
+    return key?.id;
+  }
 
  
 

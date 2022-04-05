@@ -28,7 +28,14 @@
             <div id="mains">
                 <ul>
                     <li *ngFor="let champion of championmastery">
-                        {{champion.championId}}
+                        <img class="mastery" *ngIf="champion.championLevel>5" src="../../../assets/img/mastery/m{{champion.championLevel}}.png" alt="">
+                        <h3 class="masteryinf" *ngIf="champion.championLevel<=5">{{champion.championLevel}}</h3>
+                        <img class="chest" *ngIf="champion.chestGranted == true" src="../../../assets/img/mastery/chest.png" alt="">
+                        <img class="champ" src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/{{getChampinfo(champion.championId)}}.png" alt="">
+                        <h4>{{getChampinfo(champion.championId)}}</h4>
+                        <p>{{champion.championPoints}} points</p>                        
+
+
                     </li>
                 </ul>
             </div>
