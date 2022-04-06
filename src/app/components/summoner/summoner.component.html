@@ -21,25 +21,23 @@
                 </div>
             </div>
         </div>
-        <div id="summoner-mastery">
-            <header>
-                <h3>Mastery points {{summonermastery}}</h3>
-            </header>
-            <div id="mains">
+
+        <div id="cont-2">
+            <div id="details-nav">
                 <ul>
-                    <li *ngFor="let champion of championmastery">
-                        <img class="mastery" *ngIf="champion.championLevel>5" src="../../../assets/img/mastery/m{{champion.championLevel}}.png" alt="">
-                        <h3 class="masteryinf" *ngIf="champion.championLevel<=5">{{champion.championLevel}}</h3>
-                        <img class="chest" *ngIf="champion.chestGranted == true" src="../../../assets/img/mastery/chest.png" alt="">
-                        <img class="champ" src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/{{getChampinfo(champion.championId)}}.png" alt="">
-                        <h4>{{getChampinfo(champion.championId)}}</h4>
-                        <p>{{champion.championPoints}} points</p>                        
-
-
-                    </li>
+                    <li><button  [ngClass]="{'active' : infowindow==1}" (click)="pagechange1()">Player History</button></li>
+                    <li><button  [ngClass]="{'active' : infowindow==2}" (click)="pagechange2()">Mastery</button></li>
+                    <li><button  [ngClass]="{'active' : infowindow==3}" (click)="pagechange3()">Chest</button></li>
                 </ul>
             </div>
+
+            <app-hystory class="dont-show-info" [ngClass]="{'show-info' : infowindow==1}" ></app-hystory>
+            <app-mastery class="dont-show-info" [ngClass]="{'show-info' : infowindow==2}" [summonermastery]="summonermastery" [championmastery]="championmastery" [championsarray]="championsarray"></app-mastery>
+            <app-chest class="dont-show-info" [ngClass]="{'show-info' : infowindow==3}" [summonermastery]="summonermastery" [encryptedsummonerid]="encryptedsummonerid" [championsarray]="championsarray"></app-chest>
+
         </div>
+
+        
 
     </div>
 </div>

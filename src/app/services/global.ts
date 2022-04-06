@@ -1,4 +1,4 @@
 export var Global = {
-    url: '.api.riotgames.com',
-    key: "RGAPI-37cd6ef5-5dbd-4af5-b100-531f93932d61"
+    url: '',
+    key: "RGAPI-2b5d2d69-0e50-4d6c-973a-ee17d8758f46"
 }

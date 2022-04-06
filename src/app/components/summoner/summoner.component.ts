@@ -21,13 +21,17 @@ export class SummonerComponent implements OnInit {
   public summonerleagues: Summonerleague[]=[];
   public summonermastery!: Summonermastery;
   public championmastery: Championmastery[]=[];
+  public chestorder:Championmastery[]=[];
 
   public championsarray: Champion[]=[];
+
   public champions:any = {};
 
   public summonername:string = "Summoner";
   public servercode:string="";
   public encryptedsummonerid:string="";
+  public infowindow:number=1;
+
 
   @Output() summonerEmit = new EventEmitter();
 
@@ -84,6 +88,8 @@ export class SummonerComponent implements OnInit {
     this._summonerservice.getSummonerMastery(encryptedsummonerid).subscribe(
       response =>{
          this.summonermastery = response;
+
+
       },
       error =>{
        console.log(<any>error);
@@ -95,6 +101,12 @@ export class SummonerComponent implements OnInit {
     this._summonerservice.getChampionMastery(encryptedsummonerid).subscribe(
       response =>{
          this.championmastery = response;
+
+         this.chestorder = response;
+         
+
+        // this.chestorder = this.championmastery.sort((a:any, b:any) => a.chestGranted > b.chestGranted ? -1 : a.chestGranted < b.chestGranted ? 1 : 0);
+
       },
       error =>{
        console.log(<any>error);
@@ -116,29 +128,36 @@ export class SummonerComponent implements OnInit {
          }
          
         //order by id
-        this.championsarray = this.championsarray.sort(function (n1, n2) {
-            if (n1.key > n2.key) {
-              return 1;
-            }
+        // this.championsarray = this.championsarray.sort(function (n1, n2) {
+        //     if (n1.key > n2.key) {
+        //       return 1;
+        //     }
 
-            if (n1.key < n2.key) {
-              return -1;
-            }
+        //     if (n1.key < n2.key) {
+        //       return -1;
+        //     }
 
-            return 0;
-          });
+        //     return 0;
+        //   });
 
-        console.log(typeof(this.championsarray[1].key));
+          //order by chest
+       
       },
       error =>{
        console.log(<any>error);
       }
    );
   }
+
   
-  getChampinfo(id:string){
-    var key = this.championsarray.find(x => x.key == id);
-    return key?.id;
+  pagechange1(){
+    this.infowindow = 1;
+  }
+  pagechange2(){
+    this.infowindow = 2;
+  }
+  pagechange3(){
+    this.infowindow = 3;
   }
 
  

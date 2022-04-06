@@ -1,0 +1,17 @@
+<div class="summoner-mastery">
+    <header>
+        <h3>Mastery points {{summonermastery}}</h3>
+    </header>
+    <div id="mains">
+        <ul>
+            <li *ngFor="let champion of orderchest">
+                <img class="mastery" *ngIf="champion.championLevel>5" src="../../../assets/img/mastery/m{{champion.championLevel}}.png" alt="">
+                <h3 class="masteryinf" *ngIf="champion.championLevel<=5">{{champion.championLevel}}</h3>
+                <img class="chest" *ngIf="champion.chestGranted == true" src="../../../assets/img/mastery/chest.png" alt="">
+                <img class="champ" src="http://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/{{getChampinfo(champion.championId)}}.png" alt="">
+                <h4 [ngClass]="{'truechest' : champion.chestGranted == true}" >{{getChampinfo(champion.championId)}}</h4>
+                <p>{{champion.championPoints}} points</p>                        
+            </li>
+        </ul>
+    </div>
+</div>

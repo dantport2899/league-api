@@ -53,11 +53,11 @@ nav ul{
 }
 
 nav  ul li {
-    padding-right: 22px;
+    padding-right: 20px;
 }
 
 nav  ul li a{
-    font-size: 12px;
+    font-size: 10px;
     line-height: 60px;
     text-transform: uppercase;
     text-decoration: none;
@@ -181,7 +181,17 @@ nav  ul li a{
 
 /* Champs Mastery */
 
-#summoner-mastery #mains ul{
+.summoner-mastery header{
+    margin: 0px auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.summoner-mastery header h3{
+    text-align: center;
+}
+
+.summoner-mastery #mains ul{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -190,24 +200,28 @@ nav  ul li a{
     list-style: none;
 }
 
-#summoner-mastery #mains ul li{
+.summoner-mastery #mains ul li{
     text-align: center;
     margin-bottom: 20px;
 }
 
-#summoner-mastery #mains ul li .mastery{
+.summoner-mastery #mains ul li .mastery{
     position: absolute;
     width: 30px;
 }
 
-#summoner-mastery #mains ul li .chest{
+.summoner-mastery #mains ul li .chest{
     position: absolute;
     width: 20px;
     padding-top: 60px;
     left: 80px;
 }
 
-#summoner-mastery #mains ul li h3{
+.truechest{
+    color: goldenrod;
+}
+
+.summoner-mastery #mains ul li h3{
     position: absolute;
     color: white;
     background-color: rgb(110, 0, 0);
@@ -217,12 +231,12 @@ nav  ul li a{
     margin-left: 4px;
 }
 
-#summoner-mastery #mains ul li .champ{
+.summoner-mastery #mains ul li .champ{
     width: 80px;
     box-shadow: 1px 1px  5px gray;
 }
 
-#summoner-mastery #mains ul li p{
+.summoner-mastery #mains ul li p{
     font-size: 10px;
 }
 

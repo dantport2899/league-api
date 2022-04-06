@@ -15,6 +15,9 @@ import { ChampioninfoComponent } from './components/championinfo/championinfo.co
 import { SpellsComponent } from './components/championinfo/components/spells/spells.component';
 import { BiographyComponent } from './components/championinfo/components/biography/biography.component';
 import { SkinsComponent } from './components/championinfo/components/skins/skins.component';
+import { HystoryComponent } from './components/summoner/hystory/hystory.component';
+import { MasteryComponent } from './components/summoner/mastery/mastery.component';
+import { ChestComponent } from './components/summoner/chest/chest.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { SkinsComponent } from './components/championinfo/components/skins/skins
     ChampioninfoComponent,
     SpellsComponent,
     BiographyComponent,
-    SkinsComponent
+    SkinsComponent,
+    HystoryComponent,
+    MasteryComponent,
+    ChestComponent
   ],
   imports: [
     BrowserModule,
