@@ -4,6 +4,11 @@
       "secure": false,
       "changeOrigin": true
     },
+    "/match/": {
+      "target": "https://americas.api.riotgames.com/lol",
+      "secure": false,
+      "changeOrigin": true
+    }    ,
     "/cdn/": {
       "target": "http://ddragon.leagueoflegends.com",
       "secure": false,

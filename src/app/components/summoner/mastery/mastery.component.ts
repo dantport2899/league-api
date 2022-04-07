@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Champion } from 'src/app/models/champion';
 
 @Component({
@@ -11,7 +12,9 @@ export class MasteryComponent implements OnInit {
   @Input() championmastery!: any;
   @Input() championsarray: Champion[]=[];
 
-  constructor() { }
+  constructor(
+    private _router:Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +27,10 @@ export class MasteryComponent implements OnInit {
   getChampinfo(id:string){
     var key = this.championsarray.find(x => x.key == id);
     return key?.id;
+  }
+
+  seeChamp(champ:string){
+    this._router.navigate(['/champions/champion/'+champ]);
   }
 
 }

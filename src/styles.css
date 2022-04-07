@@ -179,6 +179,20 @@ nav  ul li a{
     color: red;
 }
 
+/* hystory */
+#hystory-content{
+    width: 100%;
+}
+
+#hystory-content ul li{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+
+}
+
+
 /* Champs Mastery */
 
 .summoner-mastery header{
@@ -346,13 +360,15 @@ nav  ul li a{
 }
 
 /* details nav */
-#details-card{
+.details-card{
     margin-top: 20px;
 }
 
 #details-nav{
     border-bottom: 1px solid rgb(110, 0, 0);
     padding-bottom: 6px;
+    width: 100%;
+
 }
 
 #details-nav ul{

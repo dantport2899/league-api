@@ -11,12 +11,14 @@ export class AppComponent {
   public Summoner:any = "Summoner";
   title = 'league-api';
 
+  constructor(
+    // private _currentsummoner: CurrentsummonerService
+    ) { }
+
   ngOnInit(): void {
-    interval(1000)
-    .pipe(takeWhile(() => !stop))
-    .subscribe(() => {
-      this.getSummoner
-    });
+  //  this._currentsummoner.currentsummoner.subscribe((data: any) =>{
+  //    console.log("recibiendo data...", data);
+  //  });
   }
 
   getSummoner(){

@@ -17,7 +17,10 @@ export class StartComponent implements OnInit {
     'LA2',
     'EUW1'
   ]
-  constructor( private _router:Router) { }
+  constructor(
+    private _router:Router
+    // private _currentsummoner: CurrentsummonerService
+    ) { }
 
   ngOnInit(): void {
     
@@ -26,6 +29,9 @@ export class StartComponent implements OnInit {
   seeSummoner(){
     localStorage.setItem('currentsummoner', this.summonername);
     localStorage.setItem('currentserver', this.server);
+    // this._currentsummoner.currentsummoner.emit({
+    //   data:this.summonername
+    // });
 
     this._router.navigate(['/summoner/'+this.server+'/'+this.summonername]);
   }

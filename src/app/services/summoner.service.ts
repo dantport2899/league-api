@@ -56,6 +56,24 @@ export class SummonerService{
         }});        
     }
 
+    getMatchlist(puuid:string):Observable<any>{
+        return this._http.get('/match/v5/matches/by-puuid/'+puuid+'/ids?start=0&count=10',{headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Access-Control-Allow-Origin': '*',
+       'X-Riot-Token': this.key
+        }});        
+    }
+
+    getMatchinfo(matchid:string):Observable<any>{
+        return this._http.get('/match/v5/matches/'+matchid,{headers: {
+       'Content-Type': 'application/json',
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Access-Control-Allow-Origin': '*',
+       'X-Riot-Token': this.key
+        }});        
+    }
+
     getAllchampions(){
         return this._http.get('/cdn/12.5.1/data/en_US/champion.json',{headers: { 'Content-Type': 'application/json' }});   
     }

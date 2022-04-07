@@ -24,7 +24,6 @@ export class SummonerComponent implements OnInit {
   public chestorder:Championmastery[]=[];
 
   public championsarray: Champion[]=[];
-
   public champions:any = {};
 
   public summonername:string = "Summoner";
